@@ -93,10 +93,10 @@ class Client
         if ($httpClient === null) {
             $this->ChatAPIHttpClient = new Common\HttpClient(self::CHATAPI_ENDPOINT);
             $this->HttpClient = new Common\HttpClient(self::ENDPOINT);
-        } else {
-            $this->ChatAPIHttpClient = $httpClient;
-            $this->HttpClient = $httpClient;
         }
+
+        $this->ChatAPIHttpClient = $httpClient;
+        $this->HttpClient = $httpClient;
 
         $this->HttpClient->addUserAgentString('MessageBird/ApiClient/' . self::CLIENT_VERSION);
         $this->HttpClient->addUserAgentString($this->getPhpVersion());
