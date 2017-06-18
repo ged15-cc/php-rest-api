@@ -106,6 +106,8 @@ class Client
 
         if ($accessKey !== null) {
             $this->setAccessKey($accessKey);
+        } else {
+            $this->aaa = '';
         }
 
         $this->messages      = new Resources\Messages($this->HttpClient);
